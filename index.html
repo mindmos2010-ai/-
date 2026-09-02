@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>เกมจับคู่การ์ดความจำ</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>🧠 เกมจับคู่การ์ดความจำ</h1>
+        <p>จับคู่ผลไม้ให้ครบทั้ง 8 คู่!</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-label">⏱️ เวลา (วินาที)</div>
+          <div class="stat-value" id="timer">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">🎯 จำนวนครั้ง</div>
+          <div class="stat-value" id="moves">0</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="shuffle-btn">🔀 สับการ์ดใหม่</button>
+        <button class="btn btn-secondary" id="restart-btn">🔄 เริ่มใหม่</button>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="how-to-play">
+        <h2>📖 วิธีเล่น</h2>
+        <ul>
+          <li>คลิกการ์ดเพื่อพลิกดูภาพผลไม้ ทีละ 2 ใบ</li>
+          <li>หากภาพตรงกัน การ์ดจะคงเปิดอยู่ ถือว่าจับคู่สำเร็จ</li>
+          <li>หากไม่ตรงกัน การ์ดจะพลิกกลับปิดอัตโนมัติใน 1 วินาที</li>
+          <li>ตัวจับเวลาจะเริ่มนับเมื่อเปิดการ์ดใบแรก</li>
+          <li>จับคู่ครบทั้ง 8 คู่เพื่อชนะเกม!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="modal" id="win-modal">
+        <div class="modal-icon">🎉</div>
+        <h2>ยินดีด้วย! คุณชนะ</h2>
+        <p>คุณจับคู่ครบทั้ง 8 คู่แล้ว</p>
+        <div class="modal-stats">
+          <div class="modal-stat">
+            <div class="modal-stat-label">เวลา</div>
+            <div class="modal-stat-value" id="win-time">0 วินาที</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">จำนวนครั้ง</div>
+            <div class="modal-stat-value" id="win-moves">0 ครั้ง</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="play-again-btn">🔄 เล่นใหม่อีกครั้ง</button>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
